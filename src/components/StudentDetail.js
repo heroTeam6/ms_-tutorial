@@ -24,7 +24,7 @@ const StudentDetail = (props) => {
                 <h6>{phone}</h6>
             </div>
             <div className="col-md-3 text-center my-2">
-                <Link to={`/edit/${id}`} className="btn btn-primary btn-small mx-2">Edit</Link>
+                <Link to={`/edit/${id}`} className="btn btn-info text-white btn-small mx-2">Edit</Link>
                 <button type="button" onClick={() => deleteContact(id)} className="btn btn-danger btn-small">Delete</button>
             </div>
         </div>
