@@ -9,7 +9,7 @@ const Home = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 my-5 text-right">
-                    <Link to="/add" className="btn btn-outline-dark">Add Contact</Link>
+                    <Link to="/add" className="btn btn-outline-dark">Add</Link>
                 </div>
                 <div>
                     {
