@@ -9,31 +9,17 @@ import About from "./Component/About/About";
 import Contact from "./Component/Contact/Contact/Contact";
 import Login from "./Component/Login/Login";
 import AdminHome from "./Component/Admin/AdminHome";
-import toast from "react-hot-toast";
-import axios from "axios";
-import { useEffect } from "react";
 import EditContact from "./Component/Shared/EditContact";
 import StudentHome from "./Component/StudentInfo/StudentHome";
 export const UserContext = createContext();
 
 function App() {
   // eslint-disable-next-line
-  const [adminLoading, setAdminLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+
   const [loggedInUser, setLoggedInUser] = useState({});
-  useEffect(() => {
-    axios
-      .get(
-        `https://enigmatic-island-44538.herokuapp.com/isAdmin?email=${loggedInUser?.email}`
-      )
-      .then((res) => {
-        setIsAdmin(res.data);
-        setAdminLoading(false);
-      })
-      .catch((error) => toast.error(error.message));
-  }, [loggedInUser?.email]);
+
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser, isAdmin]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Navbar></Navbar>
         <Switch>
